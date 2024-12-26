@@ -23,8 +23,7 @@ class EmbedderModel(PreTrainedModel):
 
   def forward(self, input_ids: torch.tensor, attention_mask: torch.tensor, **kwargs) -> torch.tensor:
     '''for sentence encoding'''
-    sentence_emb = self.emb_base_model(input_ids=input_ids,
-                                       attention_mask=attention_mask)
+    sentence_emb = self.emb_base_model(input_ids=input_ids, attention_mask=attention_mask)
     return sentence_emb
 
   def forward_(self, q_input: list, d_input: list, n_input: list) -> tuple:
